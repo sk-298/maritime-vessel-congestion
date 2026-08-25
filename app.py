@@ -8,7 +8,7 @@ st.title("Vessel Delay Risk & Port Congestion Dashboard")
 
 # Load models
 reg_model = joblib.load("regression_model.pkl")
-lstm_model = load_model("lstm_model.h5")
+lstm_model = load_model("lstm_model.h5",compile=False)
 scaler = joblib.load("scaler.pkl")
 
 st.header("1. Current Vessel Delay Risk")
