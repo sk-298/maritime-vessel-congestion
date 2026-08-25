@@ -6,7 +6,8 @@ from tensorflow.keras.models import load_model
 # ---------- Load saved artifacts ----------
 rf_model = joblib.load("regression_model.pkl")
 scaler = joblib.load("scaler.pkl")
-lstm_model = load_model("lstm_model.h5")
+lstm_model = load_model("lstm_model.h5",compile=False)
+lstm_model.compile(optimizer='adam', loss='mse')
 
 st.set_page_config(page_title="Vessel ETA Risk Predictor", layout="centered")
 
